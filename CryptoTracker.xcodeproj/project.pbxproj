@@ -58,16 +58,40 @@
 		2EA650AC24BCBB1D0077B2FD /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
+				2EA650C424BCBD910077B2FD /* Model */,
+				2EA650C624BCBD9F0077B2FD /* Controller */,
+				2EA650C524BCBD990077B2FD /* View */,
 				2EA650AD24BCBB1D0077B2FD /* AppDelegate.swift */,
 				2EA650AF24BCBB1D0077B2FD /* SceneDelegate.swift */,
-				2EA650B124BCBB1D0077B2FD /* ViewController.swift */,
-				2EA650B324BCBB1D0077B2FD /* Main.storyboard */,
 				2EA650B924BCBB1E0077B2FD /* Assets.xcassets */,
 				2EA650BB24BCBB1E0077B2FD /* LaunchScreen.storyboard */,
 				2EA650BE24BCBB1E0077B2FD /* Info.plist */,
 				2EA650B624BCBB1D0077B2FD /* CryptoTracker.xcdatamodeld */,
 			);
 			path = CryptoTracker;
+			sourceTree = "<group>";
+		};
+		2EA650C424BCBD910077B2FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EA650C524BCBD990077B2FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EA650B324BCBB1D0077B2FD /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2EA650C624BCBD9F0077B2FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EA650B124BCBB1D0077B2FD /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
