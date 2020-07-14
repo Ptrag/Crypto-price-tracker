@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  CryptoTracker
-//
-//  Created by Pj on 13/07/2020.
-//  Copyright © 2020 Pj. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController, CoinManagerDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var curencySelectedLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -19,27 +11,16 @@ class ViewController: UIViewController, CoinManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setting this class as a delagte
         coinManagerSetup.delegate = self
         curencyPicker.dataSource = self
         curencyPicker.delegate = self
         
-        
-    }
-    
-    func didUpdateRate(rate: String, currency: String) {
-        DispatchQueue.main.async {
-            self.curencySelectedLabel.text = currency
-            self.priceLabel.text = rate
-        }
-        
-    }
-    
-    func didFailWithError(error: Error) {
-        print(error)
     }
 
 }
 
+//UIPicker delgate
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -56,5 +37,20 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         coinManagerSetup.performCoinRequest(currency: coinManagerSetup.currenciesArray[row])
+    }
+}
+
+//CoinManagerdelegate delegate setup
+extension ViewController: CoinManagerDelegate{
+    func didUpdateRate(rate: String, currency: String) {
+        DispatchQueue.main.async {
+            self.curencySelectedLabel.text = currency
+            self.priceLabel.text = rate
+        }
+        
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
     }
 }

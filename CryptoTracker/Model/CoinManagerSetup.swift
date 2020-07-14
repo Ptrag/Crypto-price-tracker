@@ -9,10 +9,11 @@ struct CoinManagerSetup {
     
     let baseUrl = "https://rest.coinapi.io/v1/exchangerate/BTC"
     let apiKey = "359B73B9-B7EB-448C-AE05-3E61A317A91D"
-    let currenciesArray = ["PLN","USD","EUR","GBP","RUB","YEN","AUSD","CRON","CHF","ZAR"]
+    let currenciesArray = ["PLN","USD","EUR","GBP","RUB","JPY","AUD","CRON","CHF","ZAR"]
     
     var delegate : CoinManagerDelegate?
     
+    //creating url to get the json data
     func performCoinRequest(currency: String){
         
         let urlString = "\(baseUrl)/\(currency)?apikey=\(apiKey)"
@@ -36,7 +37,7 @@ struct CoinManagerSetup {
         }
         
     }
-    
+    //parsing Json data
     func parseJSON(_ data: Data) -> Double?{
         let decoder = JSONDecoder()
         do{
