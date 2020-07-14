@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         curencyPicker.dataSource = self
         curencyPicker.delegate = self
         
+        curencyPicker.selectedRow(inComponent: 0)
+        coinManagerSetup.performCoinRequest(currency: "PLN")
     }
 
 }
